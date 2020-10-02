@@ -30,34 +30,28 @@ namespace MathClasses
             => new Vector4(left.x + right.x, left.y + right.y, left.z + right.z, left.w+right.w);
 
         public static Vector4 operator -(Vector4 left, Vector4 right)
-            => new Vector4();
-        public static Vector4 operator *(Vector4 left, Vector4 right)
-            => new Vector4();
-        public static Vector4 operator /(Vector4 left, Vector4 right)
-            => new Vector4();
+            => new Vector4(left.x - right.x, left.y - right.y, left.z - right.z, left.w - right.w);
         public static Vector4 operator *(float left, Vector4 right)
-            => new Vector4();
+            => new Vector4(left * right.x, left * right.y, left * right.z, left * right.w);
         public static Vector4 operator *(Vector4 left, float right)
-            => new Vector4();
+            => new Vector4(right * left.x, right * left.y, right * left.z, right * left.w);
 
         public float Dot(Vector4 other)
-        {
-            return 0f;
-        }
+            => x * other.x + y * other.y + z * other.z + w * other.w;
 
         public Vector4 Cross(Vector4 other)
-        {
-            return new Vector4();
-        }
+            => new Vector4(y * other.z - z * other.y, z * other.x - x * other.z, x * other.y - y * other.x, 0);
 
         public float Magnitude()
-        {
-            return 0f;
-        }
+            => (float)Math.Sqrt(x * x + y * y + z * z + w * w);
 
         public void Normalize()
         {
-
+            float mag = Magnitude();
+            x /= mag;
+            y /= mag;
+            z /= mag;
+            w /= mag;
         }
 
 
