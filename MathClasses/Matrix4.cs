@@ -85,5 +85,42 @@ namespace MathClasses
                 0, 0, 0, 1));
         }
 
+        /// <summary>
+        /// For console printing
+        /// </summary>
+        public void PrintMatrixToConsole()
+        {
+            Console.WriteLine("--------------------------------------------");
+            Console.Write($"{m1}");
+            Console.CursorLeft = 11;
+            Console.Write($"{m2}");
+            Console.CursorLeft = 22;
+            Console.Write($"{m3}");
+            Console.CursorLeft = 33;
+            Console.WriteLine($"{m4}");
+            Console.Write($"{m5}");
+            Console.CursorLeft = 11;
+            Console.Write($"{m6}");
+            Console.CursorLeft = 22;
+            Console.Write($"{m7}");
+            Console.CursorLeft = 33;
+            Console.WriteLine($"{m8}");
+            Console.Write($"{m9}");
+            Console.CursorLeft = 11;
+            Console.Write($"{m10}");
+            Console.CursorLeft = 22;
+            Console.Write($"{m11}");
+            Console.CursorLeft = 33;
+            Console.WriteLine($"{m12}");
+            Console.Write($"{m13}");
+            Console.CursorLeft = 11;
+            Console.Write($"{m14}");
+            Console.CursorLeft = 22;
+            Console.Write($"{m15}");
+            Console.CursorLeft = 33;
+            Console.WriteLine($"{m16}");
+            Console.WriteLine("--------------------------------------------");
+        }
+
     }
 }

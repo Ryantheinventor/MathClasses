@@ -37,6 +37,10 @@ namespace MathClasses
             this.m4 = setTo.m4; this.m5 = setTo.m5; this.m6 = setTo.m6;
             this.m7 = setTo.m7; this.m8 = setTo.m8; this.m9 = setTo.m9;
         }
+        public static Vector3 operator *(Matrix3 left, Vector3 right)
+            => new Vector3(left.m1 * right.x + left.m4 * right.y + left.m7 * right.z,
+                left.m2 * right.x + left.m5 * right.y + left.m8 * right.z,
+                left.m3 * right.x + left.m6 * right.y + left.m9 * right.z);
 
         public static Matrix3 operator *(Matrix3 left, Matrix3 right)
             => new Matrix3(
@@ -50,12 +54,6 @@ namespace MathClasses
                 left.m2 * right.m7 + left.m5 * right.m8 + left.m8 * right.m9,//8
                 left.m3 * right.m7 + left.m6 * right.m8 + left.m9 * right.m9 //9
                 );
-
-        public static Vector3 operator *(Matrix3 left, Vector3 right)
-            => new Vector3(left.m1 * right.x + left.m4 * right.y + left.m7 * right.z,
-                left.m2 * right.x + left.m5 * right.y + left.m8 * right.z,
-                left.m3 * right.x + left.m6 * right.y + left.m9 * right.z);
-
 
         public void SetRotateX(float amount)
         {
@@ -77,8 +75,29 @@ namespace MathClasses
                 (float)-Math.Sin(amount), (float)Math.Cos(amount), 0,
                 0, 0, 1));
         }
-
-
+        /// <summary>
+        /// For console printing
+        /// </summary>
+        public void PrintMatrixToConsole() 
+        {
+            Console.WriteLine("---------------------------------");
+            Console.Write($"{m1}");
+            Console.CursorLeft = 11;
+            Console.Write($"{m2}");
+            Console.CursorLeft = 22;
+            Console.WriteLine($"{m3}");
+            Console.Write($"{m4}");
+            Console.CursorLeft = 11;
+            Console.Write($"{m5}");
+            Console.CursorLeft = 22;
+            Console.WriteLine($"{m6}");
+            Console.Write($"{m7}");
+            Console.CursorLeft = 11;
+            Console.Write($"{m8}");
+            Console.CursorLeft = 22;
+            Console.WriteLine($"{m9}");
+            Console.WriteLine("---------------------------------");
+        }
 
     }
 }
