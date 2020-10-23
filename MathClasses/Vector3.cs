@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using System.Numerics;
 using System.Threading.Tasks;
 
 namespace MathClasses
@@ -11,7 +12,7 @@ namespace MathClasses
     {
         public float x, y, z;
 
-
+        ///public static implicit 
         public Vector3()
         {
             x = 0;
@@ -19,11 +20,23 @@ namespace MathClasses
             z = 0;
         }
 
+        
+
         public Vector3(float x, float y, float z)
         {
             this.x = x;
             this.y = y;
             this.z = z;
+        }
+
+        public static implicit operator System.Numerics.Vector3(Vector3 v)
+        {
+            return new System.Numerics.Vector3(v.x, v.y, v.z);
+        }
+
+        public static implicit operator Vector3(System.Numerics.Vector3 v)
+        {
+            return new System.Numerics.Vector3(v.X, v.Y, v.Z);
         }
 
         public static Vector3 operator +(Vector3 left, Vector3 right)
@@ -52,6 +65,7 @@ namespace MathClasses
             x /= mag;
             y /= mag;
             z /= mag;
+
         }
 
     }

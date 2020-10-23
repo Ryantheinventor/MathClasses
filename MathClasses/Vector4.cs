@@ -26,6 +26,17 @@ namespace MathClasses
             this.w = w;
         }
 
+        public static implicit operator System.Numerics.Vector4(Vector4 v)
+        {
+            return new System.Numerics.Vector4(v.x, v.y, v.z, v.w);
+        }
+
+        public static implicit operator Vector4(System.Numerics.Vector4 v)
+        {
+            return new System.Numerics.Vector4(v.X, v.Y, v.Z, v.W);
+        }
+
+
         public static Vector4 operator +(Vector4 left, Vector4 right)
             => new Vector4(left.x + right.x, left.y + right.y, left.z + right.z, left.w+right.w);
 
