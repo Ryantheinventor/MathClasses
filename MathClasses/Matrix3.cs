@@ -58,21 +58,21 @@ namespace MathClasses
         public void SetRotateX(float amount)
         {
             Set(this * new Matrix3(1, 0, 0,
-                 0, (float)Math.Cos(amount), (float)Math.Sin(amount),
-                 0, (float)-Math.Sin(amount), (float)Math.Cos(amount)));
+                 0, (float)Math.Cos(amount), (float)-Math.Sin(amount),
+                 0, (float)Math.Sin(amount), (float)Math.Cos(amount)));
         }
 
         public void SetRotateY(float amount)
         {
-            Set(this * new Matrix3((float)Math.Cos(amount), 0, (float)-Math.Sin(amount),
+            Set(this * new Matrix3((float)Math.Cos(amount), 0, (float)Math.Sin(amount),
                 0, 1, 0,
-                (float)Math.Sin(amount), 0, (float)Math.Cos(amount)));
+                (float)-Math.Sin(amount), 0, (float)Math.Cos(amount)));
         }
 
         public void SetRotateZ(float amount)
         {
-            Set(this * new Matrix3((float)Math.Cos(amount), (float)Math.Sin(amount), 0,
-                (float)-Math.Sin(amount), (float)Math.Cos(amount), 0,
+            Set(this * new Matrix3((float)Math.Cos(amount), (float)-Math.Sin(amount), 0,
+                (float)Math.Sin(amount), (float)Math.Cos(amount), 0,
                 0, 0, 1));
         }
         /// <summary>
