@@ -18,6 +18,7 @@ namespace MathClasses
             m13= 0; m14= 0; m15= 0; m16= 1;
         }
 
+        //overide matrix values
         public Matrix4(float m1, float m2, float m3, float m4, float m5, float m6, float m7, float m8, 
             float m9, float m10, float m11, float m12, float m13, float m14, float m15, float m16)
         {
@@ -33,6 +34,8 @@ namespace MathClasses
             this.m9 = setTo.m9; this.m10 = setTo.m10; this.m11 = setTo.m11; this.m12 = setTo.m12;
             this.m13 = setTo.m13; this.m14 = setTo.m14; this.m15 = setTo.m15; this.m16 = setTo.m16;
         }
+
+        //basic Matrix operators
         public static Matrix4 operator *(Matrix4 left, Matrix4 right)
             => new Matrix4(
                 left.m1 * right.m1 + left.m5 * right.m2 + left.m9 * right.m3 + left.m13 * right.m4,
@@ -61,6 +64,7 @@ namespace MathClasses
                 left.m4 * right.x + left.m8 * right.y + left.m12 * right.z + left.m16 * right.w
                 );
 
+        //rotate matrix by amount degrees around x axis
         public void SetRotateX(float amount)
         {
             Set(this * new Matrix4(1, 0, 0, 0,
@@ -69,6 +73,7 @@ namespace MathClasses
                  0, 0, 0, 1));
         }
 
+        //rotate matrix by amount degrees around y axis
         public void SetRotateY(float amount)
         {
             Set(this * new Matrix4((float)Math.Cos(amount), 0, (float)Math.Sin(amount), 0,
@@ -77,6 +82,7 @@ namespace MathClasses
                 0, 0, 0, 1));
         }
 
+        //rotate matrix by amount degrees around z axis
         public void SetRotateZ(float amount)
         {
             Set(this * new Matrix4((float)Math.Cos(amount), (float)-Math.Sin(amount), 0, 0,
